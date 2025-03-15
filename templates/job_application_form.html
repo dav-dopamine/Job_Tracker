@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add Job Application</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}  <!-- CSRF token -->
+        <div>
+            <label for="company_name">Company Name:</label>
+            {{ form.company_name() }}
+        </div>
+        <div>
+            <label for="position">Position:</label>
+            {{ form.position() }}
+        </div>
+        <div>
+            <label for="status">Status:</label>
+            {{ form.status() }}
+        </div>
+        <div>
+            <label for="date_applied">Date Applied (YYYY-MM-DD):</label>
+            {{ form.date_applied() }}
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <p><a href="{{ url_for('home') }}">Back to Dashboard</a></p>
+{% endblock %}

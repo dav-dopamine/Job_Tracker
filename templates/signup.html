@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Create an Account</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }} <!-- CSRF token -->
+        <div>
+            <label for="username">{{ form.username.label }}</label>
+            {{ form.username }} <!-- Username input field -->
+        </div>
+        <div>
+            <label for="email">{{ form.email.label }}</label>
+            {{ form.email }} <!-- Email input field -->
+        </div>
+        <div>
+            <label for="password">{{ form.password.label }}</label>
+            {{ form.password }} <!-- Password input field -->
+        </div>
+        <div>
+            {{ form.submit }} <!-- Submit button -->
+        </div>
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+{% endblock %}

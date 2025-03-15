@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Job Application{% endblock %}
+
+{% block content %}
+<h1>Edit Job Application</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}  <!-- CSRF token -->
+    <div>
+        <label for="company_name">Company Name:</label>
+        {{ form.company_name() }}
+    </div>
+    <div>
+        <label for="position">Position:</label>
+        {{ form.position() }}
+    </div>
+    <div>
+        <label for="status">Status:</label>
+        {{ form.status() }}
+    </div>
+    <div>
+        <label for="date_applied">Date Applied:</label>
+        {{ form.date_applied() }}
+    </div>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}
